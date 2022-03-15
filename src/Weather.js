@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 
-export default function Weather() {
+export default function Weather(props) {
   const [weatherdata, setWeatherdata] = useState({ ready: false });
   function showTemperature(response) {
     console.log(response.data);
@@ -28,7 +28,7 @@ export default function Weather() {
             <h2>{weatherdata.city}</h2>
             <h5>Tuesday 10:00</h5>
             <h2>{Math.round(weatherdata.temperature)} °C </h2>
-            image
+            <img src={weatherdata.icon} />
           </div>
 
           <div className="row ">
@@ -45,10 +45,10 @@ export default function Weather() {
               Feels Like:{weatherdata.feels_like}
             </div>
             <div class="col-md-4 info-text  border">
-              Sunrise:{weatherdata.sunrise * 1000} am
+              Sunrise:{weatherdata.sunrise} am
             </div>
             <div class="col-md-4  info-text border">
-              Sunset:{weatherdata.sunset * 1000}pm
+              Sunset:{weatherdata.sunset}pm
             </div>
           </div>
           <div className="row">
@@ -74,8 +74,7 @@ export default function Weather() {
   } else {
     let apiKey = "a007f377631f64e3ca30e980828384a8";
     let units = "metric";
-    let city = "Paris";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultcity}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(showTemperature);
   }
   return "Please wait - loading... ";

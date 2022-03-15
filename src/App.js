@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <h1> Weather react Search Engine </h1>
         <p>Zahra Olanrewaju -</p>
-          <Weather />
+          <Weather defaultcity="London"/>
       </header>
 
     
