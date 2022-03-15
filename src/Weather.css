@@ -1,0 +1,28 @@
+.Weather {
+  border: 2px solid black;
+  padding: 30px;
+  margin: 20px;
+}
+#Titles {
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+.col-4 {
+  border: 2px solid black;
+  padding: 20px;
+}
+.row {
+  padding: 20px;
+}
+#search-btn {
+  margin-top: -15px;
+}
+.info-text{
+    font-size: 20px;
+    text-align: center;
+     padding: 10px;
+}
+h5{
+   font-size: 15px;
+}
