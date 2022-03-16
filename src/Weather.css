@@ -1,5 +1,5 @@
-.Weather {
-  border: 2px solid black;
+.Weather-info {
+  border: 2px solid rgb(0, 0, 0);
   padding: 30px;
   margin: 20px;
 }
@@ -35,7 +35,4 @@ h5 {
 #temp {
   font-size: 35px;
   font-weight: lighter;
-}
-form {
-  border: none;
 }

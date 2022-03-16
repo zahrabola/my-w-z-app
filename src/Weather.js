@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
+import Weathericon from "./Weathericon";
 import FormattedDate from "./FormattedDate";
 
 export default function Weather(props) {
@@ -39,7 +40,7 @@ export default function Weather(props) {
 
   if (weatherdata.ready) {
     return (
-      <div className="Weather">
+      <div className="Weather-info">
         <div className="container">
           <div className="info" id="Titles">
             <p>Zahra's Weather App</p>
