@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Weather.css";
 import Weathericon from "./Weathericon";
 import FormattedDate from "./FormattedDate";
+import WeatherTemp from "./WeatherTemp";
 
 export default function Weather(props) {
   const [weatherdata, setWeatherdata] = useState({ ready: false });
@@ -51,7 +52,9 @@ export default function Weather(props) {
               <FormattedDate date={weatherdata.date} />
             </h4>
 
-            <h2 id="temp">{Math.round(weatherdata.temperature)} °C </h2>
+            <h2 id="temp">
+              <WeatherTemp celsius={weatherdata.temperature} />
+            </h2>
 
             <Weathericon code={weatherdata.icon} />
           </div>
