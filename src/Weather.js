@@ -15,11 +15,10 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
       feelslike: response.data.main.feels_like,
-      humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
       sunrise: response.data.sys.sunrise * 1000,
       sunset: response.data.sys.sunset * 1000,
-      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
     });
   }
 
@@ -52,7 +51,8 @@ export default function Weather(props) {
             </h4>
 
             <h2 id="temp">{Math.round(weatherdata.temperature)} °C </h2>
-            <img src={weatherdata.icon} />
+
+            <Weathericon code={weatherdata.icon} />
           </div>
 
           <div className="row ">
@@ -63,16 +63,17 @@ export default function Weather(props) {
               Wind speed: {Math.round(weatherdata.wind)}km/h
             </div>
             <div class="col-md-4 info-text  border">
-              Humidity: {weatherdata.humidity}%:
+              Humidity: {weatherdata.humidity}%
             </div>
             <div class="col-md-4 info-text border">
               Feels Like:{Math.round(weatherdata.feels_like)}
             </div>
             <div class="col-md-4 info-text  border">
-              Sunrise:{weatherdata.sunrise} am
+              Sunrise:{Math.round(weatherdata.sunrise)}am
             </div>
             <div class="col-md-4  info-text border">
-              Sunset:{weatherdata.sunset}pm
+              Sunset:{Math.round(weatherdata.sunset)}
+              pm
             </div>
           </div>
 

@@ -36,3 +36,6 @@ h5 {
   font-size: 35px;
   font-weight: lighter;
 }
+form {
+  border: none;
+}
