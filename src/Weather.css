@@ -18,11 +18,21 @@
 #search-btn {
   margin-top: -15px;
 }
-.info-text{
-    font-size: 20px;
-    text-align: center;
-     padding: 10px;
+.info-text {
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
 }
-h5{
-   font-size: 15px;
+h5 {
+  font-size: 15px;
+}
+#cityname {
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+#temp {
+  font-size: 35px;
+  font-weight: lighter;
 }
