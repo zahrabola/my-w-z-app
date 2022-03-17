@@ -9,6 +9,14 @@ function App() {
         <p>Zahra Olanrewaju -</p>
         <Weather defaultcity="London" />
       </header>
+      <body>
+        <div className="link">
+          <p>Coded by Zahra Olanrewaju</p>
+          <a href="https://github.com/zahrabola/my-w-z-app">
+            Open sourece Github
+          </a>
+        </div>
+      </body>
     </div>
   );
 }
