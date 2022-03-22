@@ -1,0 +1,8 @@
+.Weather-Forecast-day {
+  font-style: italic;
+  font-weight: lighter;
+}
+.Weather-Forecast-temp-max,
+.Weather-Forecast-temp-min {
+  font-weight: lighter;
+}

@@ -4,6 +4,7 @@ import "./Weather.css";
 import Weathericon from "./Weathericon";
 import FormattedDate from "./FormattedDate";
 import WeatherTemp from "./WeatherTemp";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   const [weatherdata, setWeatherdata] = useState({ ready: false });
@@ -12,12 +13,14 @@ export default function Weather(props) {
   function showTemperature(response) {
     setWeatherdata({
       ready: true,
+      coordinates: response.data.coord,
       city: response.data.name,
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
-      feelslike: response.data.main.feels_like,
+      humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
+      realFeel: response.data.main.feels_like,
       sunrise: response.data.sys.sunrise * 1000,
       sunset: response.data.sys.sunset * 1000,
       icon: response.data.weather[0].icon,
@@ -70,7 +73,7 @@ export default function Weather(props) {
               Humidity: {weatherdata.humidity}%
             </div>
             <div class="col-md-4 info-text border">
-              Feels Like:{Math.round(weatherdata.feels_like)}
+              Feels Like:{Math.round(weatherdata.realFeel)} °C
             </div>
             <div class="col-md-4 info-text  border">
               Sunrise:{Math.round(weatherdata.sunrise)}am
@@ -79,6 +82,7 @@ export default function Weather(props) {
               Sunset:{Math.round(weatherdata.sunset)}
               pm
             </div>
+            <WeatherForecast coordinates={weatherdata.coordinates} />
           </div>
 
           <div className="Weather">
