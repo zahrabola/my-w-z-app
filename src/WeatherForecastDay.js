@@ -33,6 +33,7 @@ export default function WeatherForecastDay(props) {
           Min: {minTemperature()}
         </div>
       </div>
+     
     </div>
   );
 }
