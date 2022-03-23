@@ -21,8 +21,6 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
       realFeel: response.data.main.feels_like,
-      sunrise: response.data.sys.sunrise * 1000,
-      sunset: response.data.sys.sunset * 1000,
       icon: response.data.weather[0].icon,
     });
   }
@@ -36,7 +34,7 @@ export default function Weather(props) {
   }
 
   function search() {
-    let apiKey = "a007f377631f64e3ca30e980828384a8";
+    let apiKey = "94cfe1d2e012b0f247f6295c4ed86fe6";
     let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(showTemperature);
@@ -63,28 +61,21 @@ export default function Weather(props) {
           </div>
 
           <div className="row ">
-            <div class="col-md-4 info-text border">
+            <div class="col-md-3 info-text border">
               Description: {weatherdata.description}
             </div>
-            <div class="col-md-4 info-text  border">
+            <div class="col-md-3 info-text  border">
               Wind speed: {Math.round(weatherdata.wind)}km/h
             </div>
-            <div class="col-md-4 info-text  border">
+            <div class="col-md-3 info-text  border">
               Humidity: {weatherdata.humidity}%
             </div>
-            <div class="col-md-4 info-text border">
-              Feels Like:{Math.round(weatherdata.realFeel)} °C
+            <div class="col-md-3 info-text border">
+              Feels Like: {Math.round(weatherdata.realFeel)} °C
             </div>
-            <div class="col-md-4 info-text  border">
-              Sunrise:{Math.round(weatherdata.sunrise)}am
-            </div>
-            <div class="col-md-4  info-text border">
-              Sunset:{Math.round(weatherdata.sunset)}
-              pm
-            </div>
+
             <WeatherForecast coordinates={weatherdata.coordinates} />
           </div>
-
           <div className="Weather">
             <form onSubmit={handleSubmit}>
               <div className="row">

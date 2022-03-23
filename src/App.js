@@ -6,7 +6,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1> Weather react Search Engine </h1>
-      
         <Weather defaultcity="London" />
       </header>
       <body>
