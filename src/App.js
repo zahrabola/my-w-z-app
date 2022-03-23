@@ -1,9 +1,20 @@
 import "./App.css";
 import Weather from "./Weather";
+import { useContext } from "react";
+import { ThemeContext } from "./theme";
 
-function App() {
+const App = () => {
+  const [{ theme, isDark }, toggleTheme] = useContext(ThemeContext);
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{ backgroundColor: theme.backgroundColor, color: theme.color }}
+    >
+      {" "}
+      <div className="text">It's a {isDark ? "Dark" : "Light"} theme</div>
+      <button type="button" onClick={toggleTheme}>
+        Toggle theme
+      </button>
       <header className="App-header">
         <h1> Weather react Search Engine </h1>
         <Weather defaultcity="London" />
@@ -18,6 +29,6 @@ function App() {
       </body>
     </div>
   );
-}
+};
 
 export default App;
