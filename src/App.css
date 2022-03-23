@@ -16,3 +16,8 @@
   text-align: center;
   color: rgb(54, 54, 54);
 }
+button {
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+}
