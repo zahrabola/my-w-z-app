@@ -48,29 +48,28 @@ export default function Weather(props) {
             <p>Zahra's Weather App</p>
             <h2 id="cityname"> {weatherdata.city}</h2>
 
-            <h4>
+            <h4 className="dateinfo">
               {" "}
               <FormattedDate date={weatherdata.date} />
             </h4>
 
-            <h2 id="temp">
+            <h2 id="temp ">
               <WeatherTemp celsius={weatherdata.temperature} />
             </h2>
-
             <Weathericon code={weatherdata.icon} />
           </div>
 
           <div className="row ">
-            <div class="col-md-3 info-text border">
+            <div class="col-md-3 info-text ">
               Description: {weatherdata.description}
             </div>
-            <div class="col-md-3 info-text  border">
+            <div class="col-md-3 info-text ">
               Wind speed: {Math.round(weatherdata.wind)}km/h
             </div>
-            <div class="col-md-3 info-text  border">
+            <div class="col-md-3 info-text">
               Humidity: {weatherdata.humidity}%
             </div>
-            <div class="col-md-3 info-text border">
+            <div class="col-md-3 info-text">
               Feels Like: {Math.round(weatherdata.realFeel)} °C
             </div>
 

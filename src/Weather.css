@@ -1,5 +1,5 @@
 .Weather-info {
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px solid rgb(255, 255, 255);
   padding: 30px;
   margin: 20px;
 }
@@ -8,13 +8,13 @@
   text-align: center;
   padding: 20px;
 }
-.col-4 {
-  border: 2px solid black;
-  padding: 20px;
+.col-md-3 {
+  padding: 15px;
 }
 .row {
-  padding: 20px;
+  padding: 25px;
 }
+
 #search-btn {
   margin-top: -15px;
 }
@@ -35,4 +35,9 @@ h5 {
 #temp {
   font-size: 35px;
   font-weight: lighter;
+  padding: 20px;
+  margin: 5px;
+}
+a {
+  color: #ed8c72;
 }

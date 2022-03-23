@@ -25,6 +25,7 @@ const App = () => {
           <a href="https://github.com/zahrabola/my-w-z-app">
             Open sourece Github
           </a>
+          <p>and hosted on Netlify</p>
         </div>
       </body>
     </div>
